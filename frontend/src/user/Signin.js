@@ -50,9 +50,9 @@ const Signin = ({ addUserRole, removeUserRole }) => {
       // redirecting user to admin page more securely
       console.log("userRole......", userRole);
       if (userRole === 1) {
-        console.log("redirect user to adminDashboard");
+        return <Redirect to="/admin/dashboard" />;
       } else {
-        console.log("redirect user to userDashboard");
+        return <Redirect to="/user/dashboard" />;
       }
     }
     if (isAuthenticated()) {

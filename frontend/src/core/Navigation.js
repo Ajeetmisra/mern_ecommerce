@@ -20,7 +20,7 @@ const currentTab = (history, path) => {
 };
 
 const Navigation = ({ history, userState, removeUserRole }) => {
-  console.log("isAdmin Role", userState);
+  console.log("isAdmin Role", userState[0]);
   return (
     <Navbar className="bg-dark" bg="light" expand="lg">
       <Navbar.Brand className="text-white">E-Commerce Store</Navbar.Brand>
@@ -43,29 +43,33 @@ const Navigation = ({ history, userState, removeUserRole }) => {
               onClick={() => {
                 console.log("isAdmin Role", userState);
 
-                console.log("token", isAuthenticated().token);
+                // console.log("token", isAuthenticated().token);
               }}
             >
               cart
             </span>
           </Nav.Link>
           <Nav.Link className="text-white">
-            <Link
-              style={currentTab(history, "/cart")}
-              className="nav-link"
-              to="/user/dashboard"
-            >
-              UserDashboard
-            </Link>
+            {isAuthenticated() && userState[0] === 0 && (
+              <Link
+                style={currentTab(history, "/cart")}
+                className="nav-link"
+                to="/user/dashboard"
+              >
+                UserDashboard
+              </Link>
+            )}
           </Nav.Link>
           <Nav.Link className="text-white">
-            <Link
-              style={currentTab(history, "/cart")}
-              className="nav-link"
-              to="/admin/dashboard"
-            >
-              A.Dashboard
-            </Link>
+            {isAuthenticated() && userState[0] === 1 && (
+              <Link
+                style={currentTab(history, "/cart")}
+                className="nav-link"
+                to="/admin/dashboard"
+              >
+                A.Dashboard
+              </Link>
+            )}
           </Nav.Link>
           <Nav.Link className="text-white">
             {!isAuthenticated() && (
