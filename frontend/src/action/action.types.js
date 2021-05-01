@@ -1,0 +1,2 @@
+export const ADD_USERROLE = "ADD_USERROLE";
+export const REMOVE_USERROLE = "REMOVE_USERROLE";
