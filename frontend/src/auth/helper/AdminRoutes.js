@@ -1,8 +1,9 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import { Route, Redirect } from "react-router-dom";
 import { isAuthenticated } from "./index";
 import { connect } from "react-redux";
 import propTypes from "prop-types";
+import { isAdmin } from "../../admin/helper/adminapicall";
 
 const AdminRoutes = ({ component: Component, userState, ...rest }) => {
   return (

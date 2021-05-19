@@ -7,6 +7,7 @@ import propTypes from "prop-types";
 import { connect } from "react-redux";
 import { API } from "../backend";
 import { removeUserRole } from "../action/user";
+import { AdminRouteSecond } from "../user/Signin";
 
 const currentTab = (history, path) => {
   if (history.location.pathname === path) {
@@ -67,7 +68,7 @@ const Navigation = ({ history, userState, removeUserRole }) => {
                 className="nav-link"
                 to="/admin/dashboard"
               >
-                A.Dashboard
+                AdminDashboard
               </Link>
             )}
           </Nav.Link>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Base from "../core/Base";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, Route } from "react-router-dom";
 import { signin, authenticate, isAuthenticated } from "../auth/helper/index";
 import propTypes from "prop-types";
 import { addUserRole, removeUserRole } from "../action/user";
@@ -45,6 +45,7 @@ const Signin = ({ addUserRole, removeUserRole }) => {
         console.log("signin request failed");
       });
   };
+
   const performRedirect = () => {
     if (didRedirect) {
       // redirecting user to admin page more securely

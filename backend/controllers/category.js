@@ -27,7 +27,7 @@ exports.getCategory = (req, res) => {
   return res.status(200).json(req.category);
 };
 
-exports.getCategories = () => {
+exports.getCategories = (req, res) => {
   Category.find().exec((err, categories) => {
     if (err) {
       return res.status(400).json({

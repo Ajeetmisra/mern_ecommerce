@@ -13,9 +13,11 @@ export default function Base({ title, children, className, description }) {
         <div className={className}>{children}</div>
       </div>
       <footer className="footer bg-dark mt-auto py-3 fixed-bottom">
-        <div className="container-fluid bg-success text-white text-center py-3">
+        <div className="container-fluid bg-secondary bg-gradient text-black text-center py-3">
           <h4>If you got any questions, feel free to reach out!</h4>
-          <button className="btn btn-warning btn-lg">Contact Us</button>
+          <button className="btn btn-warning bg-gradient btn-lg">
+            Contact Us
+          </button>
         </div>
         <div className="container text-center py-3 ">
           <span className="text-muted">
