@@ -131,7 +131,7 @@ export const updateAproduct = (productId, userId, token, product) => {
 
     headers: {
       Accept: "application/json",
-      "Content-Type": "application/json",
+      // "Content-Type": "application/json",
       Authorization: `bearer ${token}`,
     },
 
@@ -141,6 +141,6 @@ export const updateAproduct = (productId, userId, token, product) => {
       return response.json();
     })
     .catch((error) => {
-      console.log("error in creating category", error);
+      console.log("error in Updating Product", error);
     });
 };
