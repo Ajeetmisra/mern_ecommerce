@@ -142,7 +142,7 @@ const UpdateProduct = ({ match }) => {
     );
   };
 
-  const createProductForm = () => (
+  const updateProductForm = () => (
     <form>
       <span>Post Photo</span>
       <div className="form-group  mt-2 ">
@@ -215,7 +215,7 @@ const UpdateProduct = ({ match }) => {
         onClick={onSubmit}
         className="btn btn-outline-success mb-10 mt-3 "
       >
-        Create Product
+        Update Product
       </button>
     </form>
   );
@@ -234,7 +234,7 @@ const UpdateProduct = ({ match }) => {
         <div className="col-md-8 offset-md-2">
           {errorMessage()}
           {successMessage()}
-          {createProductForm()}
+          {updateProductForm()}
         </div>
       </div>
     </Base>

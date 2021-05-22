@@ -43,6 +43,26 @@ export const createCategory = (userId, token, category) => {
     });
 };
 
+// update category
+export const updateCategory = (categoryId, userId, token, category) => {
+  return fetch(`${API}category/${categoryId}/${userId}`, {
+    method: "PUT",
+
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `bearer ${token}`,
+    },
+
+    body: JSON.stringify(category),
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((error) => {
+      console.log("error in Updating category", error);
+    });
+};
 //get categories
 export const getCategories = () => {
   return fetch(`${API}categories`, {
@@ -57,6 +77,38 @@ export const getCategories = () => {
     });
 };
 
+// get a single category
+export const getCategory = (categoryId) => {
+  return fetch(`${API}category/${categoryId}`, {
+    method: "GET",
+  })
+    .then((response) => {
+      return response.json();
+    })
+
+    .catch((error) => {
+      console.log("error in getting all categories");
+    });
+};
+
+// delete a category
+export const deleteCategory = (categoryId, userId, token) => {
+  return fetch(`${API}category/${categoryId}/${userId}`, {
+    method: "DELETE",
+
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `bearer ${token}`,
+    },
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((error) => {
+      console.log("error in deleting category", error);
+    });
+};
 // peoduct calls
 
 // create a product
